@@ -1,0 +1,118 @@
+const arr = [
+  {
+    id: 421903900291717,
+    pid: 0,
+    type: 1,
+    name: "supplierPlatform",
+    path: "/supplierPlatform",
+    redirect: "/supplierPlatform/MaterialLabelManage",
+    permission: "",
+    title: "供应商平台",
+    icon: "iconfont icon-diannao1",
+    isFrame: false,
+    outlink: "",
+    isHide: false,
+    isKeepAlive: true,
+    isAffix: false,
+    orderNo: 5,
+    status: 1,
+    remark: "",
+    isDeleted: false,
+    createUser: "dw",
+    createTime: "2023-05-27 14:31:23",
+    updateUser: "dw",
+    updateTime: "2023-05-31 09:27:06",
+    children: [
+      {
+        id: 421904242827909,
+        pid: 421903900291717,
+        type: 2,
+        name: "UIDquery",
+        path: "/supplierPlatform/UIDquery",
+        redirect: "",
+        permission: "",
+        title: "UID查询",
+        icon: "iconfont icon-tongzhi4",
+        isFrame: false,
+        outlink: "",
+        isHide: false,
+        isKeepAlive: true,
+        isAffix: false,
+        orderNo: 100,
+        status: 1,
+        remark: "",
+        isDeleted: false,
+        createUser: "dw",
+        createTime: "2023-05-27 14:32:47",
+        updateUser: "dw",
+        updateTime: "2023-05-31 09:30:03",
+        children: null,
+      },
+    ],
+  },
+  {
+    id: 421904242827909,
+    pid: 421903900291717,
+    type: 2,
+    name: "UIDquery",
+    path: "/supplierPlatform/UIDquery",
+    redirect: "",
+    permission: "",
+    title: "UID查询",
+    icon: "iconfont icon-tongzhi4",
+    isFrame: false,
+    outlink: "",
+    isHide: false,
+    isKeepAlive: true,
+    isAffix: false,
+    orderNo: 100,
+    status: 1,
+    remark: "",
+    isDeleted: false,
+    createUser: "dw",
+    createTime: "2023-05-27 14:32:47",
+    updateUser: "dw",
+    updateTime: "2023-05-31 09:30:03",
+    children: null,
+  },
+  {
+    id: 421910006170245,
+    pid: 421903900291717,
+    type: 2,
+    name: "user",
+    path: "/supplierPlatform",
+    redirect: "",
+    permission: "",
+    title: "供应商管理",
+    icon: "ele-DeleteLocation",
+    isFrame: false,
+    outlink: "",
+    isHide: false,
+    isKeepAlive: true,
+    isAffix: true,
+    orderNo: 0,
+    status: 1,
+    remark: "",
+    isDeleted: false,
+    createUser: "dw",
+    createTime: "2023-05-27 14:56:14",
+    updateUser: null,
+    updateTime: null,
+    children: null,
+  },
+];
+
+// function foo(arr) {
+//   let newArr;
+//   for (const menus of arr) {
+//     console.log(menus);
+//     return;
+//     if (menus.children !== null) {
+//       return;
+//     } else {
+//       return foo(menus.children);
+//     }
+//   }
+// }
+
+// foo(arr);

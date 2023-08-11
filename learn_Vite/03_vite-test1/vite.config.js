@@ -18,6 +18,7 @@ const envResolver = {
 export default defineConfig(({ command, mode }) => {
   const endEnv = loadEnv(mode, process.cwd(), "");
   // console.log("endEnv=========>", endEnv);
-  console.log("process.cwd()=========>", process.cwd());
+  console.log("envResolver[command]()=========>", envResolver[command]);
+  // console.log("process.cwd()=========>", process.cwd());
   return envResolver[command]();
 });

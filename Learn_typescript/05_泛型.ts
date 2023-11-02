@@ -103,4 +103,38 @@
 //   completed: false,
 // };
 
+// 泛型约束
+// interface LengthWise {
+//   length: number;
+// }
 
+// function getLength<T extends LengthWise>(arg: T): T {
+//   console.log("arg.length=========>", arg.length);
+//   return arg;
+// }
+// getLength("hahhaha");
+// getLength([1, 2, 3, 4]);
+// getLength({ length: 5 });
+
+// 泛型类型别名
+// type Cart<T> = { list: T[] } | T[];
+// let C1: Cart<"" | number> = [1, 2];
+// let C2: Cart<""> = ["", ""];
+// let C3: Cart<string> = { list: ["1"] };
+
+// 工具类 - readonly
+interface Person {
+  name: string;
+  age: number;
+  gender?: "male" | "female";
+  sayHi: () => string;
+}
+let p1: Readonly<Person> = {
+  name: "zs",
+  age: 17,
+  sayHi: function () {
+    console.log("=========>", "hello world");
+    return "123";
+  },
+};
+console.log("p1=========>", p1.sayHi());

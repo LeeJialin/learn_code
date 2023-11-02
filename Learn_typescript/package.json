@@ -1,0 +1,13 @@
+{
+  "name": "Learn_typescript",
+  "version": "1.0.0",
+  "description": "在电脑上运行ts需要node环境和ts依赖包(全局)",
+  "main": "05_泛型.ts",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev": "nodemon"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC"
+}

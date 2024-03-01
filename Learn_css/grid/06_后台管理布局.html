@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+      }
+      html,
+      body {
+        height: 100%;
+      }
+      .container {
+        height: 100%;
+        display: grid;
+        grid-template-columns: repeat(12, 1fr);
+        grid-template-rows: 100px auto 100px;
+        grid-template-areas:
+          "h h h h h h h h h h h h"
+          "m m c c c c c c c c c c"
+          "f f f f f f f f f f f f";
+      }
+
+      .footer,
+      .header {
+        background-color: red;
+      }
+      .header {
+        grid-area: h;
+      }
+      .footer {
+        grid-area: f;
+      }
+      .menu {
+        grid-area: m;
+        background-color: orange;
+      }
+      .content {
+        grid-area: c;
+        background-color: pink;
+      }
+
+      @media (max-width: 768px) {
+        .container {
+          grid-template-areas:
+          "h h h h h h m m m m m m"
+          "c c c c c c c c c c c c"
+          "f f f f f f f f f f f f";
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <div class="header">头部</div>
+      <div class="menu">菜单</div>
+      <div class="content">内容</div>
+      <div class="footer">底部</div>
+    </div>
+  </body>
+</html>

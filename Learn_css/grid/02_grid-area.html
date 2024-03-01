@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+      }
+      html,
+      body {
+        width: 100%;
+        height: 100%;
+      }
+      .container {
+        background-color: azure;
+        width: 600px;
+        height: 600px;
+        display: grid;
+        /* 每行3列，固定100px */
+        grid-template-columns: repeat(3, 1pr);
+
+        /* 每行3列，左右两个单元格固定宽度100px，中间为自动剩下的宽度 */
+        grid-template-rows: repeat(3, 1pr);
+
+        grid-gap: 5px;
+
+        grid-template-areas:
+          "a b c"
+          "d e f"
+          "g h i";
+      }
+      .item {
+        background-color: orange;
+      }
+      .item1 {
+        grid-area: a;
+      }
+      .item2 {
+        grid-area: d;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <div class="item item1">1</div>
+      <div class="item item2">2</div>
+      <div class="item item3">3</div>
+      <div class="item item4">4</div>
+      <div class="item item5">5</div>
+      <div class="item item6">6</div>
+      <div class="item item7">7</div>
+      <div class="item item8">8</div>
+      <div class="item item8">9</div>
+    </div>
+  </body>
+</html>

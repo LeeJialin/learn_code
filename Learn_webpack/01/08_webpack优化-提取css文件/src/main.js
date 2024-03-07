@@ -1,6 +1,7 @@
 import React from "react";
 import ReactDom from "react-dom/client";
 import App from "./react/App";
+import "./css/style";
 import axios from "axios";
 import dayjs from "dayjs";
 import count from "./utils/count_utlis";

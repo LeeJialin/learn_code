@@ -1,6 +1,8 @@
 import React from "react";
 import ReactDom from "react-dom/client";
 import App from "./react/App";
+import "./css/style";
+import "./css/common";
 import axios from "axios";
 import dayjs from "dayjs";
 import count from "./utils/count_utlis";
@@ -24,7 +26,7 @@ btn1.textContent = "关于";
 btn2.textContent = "分类";
 document.body.append(btn1);
 document.body.append(btn2);
-
+btn1.className = 'btn1'
 btn1.onclick = function () {
   import(/* webpackChunkName: "about" */ "./router/about").then((res) => {
     res.about();

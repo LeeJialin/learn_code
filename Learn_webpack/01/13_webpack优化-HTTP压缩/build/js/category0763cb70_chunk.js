@@ -1,0 +1,1 @@
+(self.webpackChunk_04_webpack_server=self.webpackChunk_04_webpack_server||[]).push([[139],{459:function(){const e=document.createElement("h1");e.textContent="Category Page",document.body.append(e)}}]);

@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunk_04_webpack_server=self.webpackChunk_04_webpack_server||[]).push([[594],{10:function(e,t,n){n.r(t),n.d(t,{about:function(){return o}});const c=document.createElement("h1");function o(){console.log("about function exec~")}c.textContent="About Page",document.body.append(c);t.default="ABOUT"}}]);

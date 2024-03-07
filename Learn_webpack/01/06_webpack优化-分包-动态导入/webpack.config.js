@@ -22,6 +22,8 @@ module.exports = {
     path: path.resolve(__dirname, "./dist"), // 输入文件路径
     filename: "[name].bundle.js", // 输入文件名
     clean: true,
+    // 单独针对分包的文件进行命名
+    chunkFilename: "[name]_chunk.js",
   },
   module: {
     rules: [
@@ -79,6 +81,7 @@ module.exports = {
       template: "./index.html",
     }),
   ],
+  // 优化
   optimization: {
     splitChunks: {
       chunks: "all",
@@ -107,5 +110,18 @@ module.exports = {
       }),
       // CSS代码简化
     ],
+    // 配置用于告知webpack模块的id采用什么算法生成
+    // natural：按照数字的顺序使用id；
+    // named：development下的默认值，一个可读的名称的id；
+    // deterministic：确定性的，在不同的编译中不变的短数字id
+    // 开发过程中，推荐使用named；
+    // 打包过程中，推荐使用deterministic；
+    chunkIds: "deterministic",
+    // 配置runtime相关的代码是否抽取到一个单独的chunk中,抽离出来后，有利于浏览器缓存的策略：
+    // 比如我们修改了业务代码（main），那么runtime和component、bar的chunk是不需要重新加载的；
+    // 比如我们修改了component、bar的代码，那么main中的代码是不需要重新加载的；
+    runtimeChunk: {
+      name: "runtime",
+    },
   },
 };

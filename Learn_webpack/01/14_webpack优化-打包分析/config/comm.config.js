@@ -93,6 +93,7 @@ const getCommonConfig = function (isProdution) {
 module.exports = function (env) {
   const isProduction = env.production;
   let mergeConfig = isProduction ? prodConfig : devConfig;
-  const finalConfig = merge(getCommonConfig(isProduction), mergeConfig);
-  return smp.wrap(finalConfig);
+  return merge(getCommonConfig(isProduction), mergeConfig);
+  // const finalConfig = merge(getCommonConfig(isProduction), mergeConfig);
+  // return smp.wrap(finalConfig);
 };

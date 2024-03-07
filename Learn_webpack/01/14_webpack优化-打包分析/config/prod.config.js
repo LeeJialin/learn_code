@@ -5,8 +5,9 @@ const TerserPlugin = require("terser-webpack-plugin");
 const { ProvidePlugin } = require("webpack");
 const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 const CSSMinimizerPlugin = require("css-minimizer-webpack-plugin");
-const { PurgeCSSPlugin } = require('purgecss-webpack-plugin')
-const CompressionPlugin = require("compression-webpack-plugin")
+const { PurgeCSSPlugin } = require("purgecss-webpack-plugin");
+const CompressionPlugin = require("compression-webpack-plugin");
+const { BundleAnalyzerPlugin } = require("webpack-bundle-analyzer");
 
 // path.resolve(__dirname, './src'): 使用 path.resolve() 方法将当前文件所在目录下的 ./src 目录的路径解析为绝对路径。__dirname 表示当前文件所在的目录。
 // /**/*: 这是一个通配符，匹配 ./src 目录下的所有子目录和文件。
@@ -48,7 +49,7 @@ module.exports = {
     minimize: true,
     // 代码优化: TerserPlugin => 让代码更加简单 => Terser
     minimizer: [
-      // JS压缩的插件 TerserPlugin: 
+      // JS压缩的插件 TerserPlugin:
       // extractComments: 控制是否提取注释，默认为 true。当设置为 false 时，不会提取注释。
       // terserOptions: Terser 的选项对象，用于配置 Terser 的行为。
       // compress: 用于配置压缩选项的子对象。在这里，arguments 和 unused 设置为 true，表示启用参数和未使用变量的压缩。
@@ -82,7 +83,7 @@ module.exports = {
       // CSS压缩通常是去除无用的空格等，因为很难去修改选择器、属性的名称、值等；
       new CSSMinimizerPlugin({
         parallel: true,
-      })
+      }),
     ],
   },
   plugins: [
@@ -100,11 +101,13 @@ module.exports = {
         };
       },
     }),
-     // 对打包后的文件(js/css)进行压缩
-     new CompressionPlugin({
+    // 对打包后的文件(js/css)进行压缩
+    new CompressionPlugin({
       test: /\.(js|css)$/,
-      algorithm: 'gzip',
-      minRatio: 0.8 // 至少压缩比例
-    })
+      algorithm: "gzip",
+      minRatio: 0.8, // 至少压缩比例
+    }),
+    // 对打包后的结果进行分析
+    new BundleAnalyzerPlugin(),
   ],
 };
